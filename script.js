@@ -31,3 +31,10 @@ weather.fetchWeather("Mumbai");
 document.querySelector(".search-button").addEventListener("click", function () {
     weather.fetchWeather(document.querySelector(".search-bar").value);
 });
+
+//on enter key press
+document.querySelector(".search-bar").addEventListener("keyup", function (event) {
+    if (event.key == "Enter") {
+        weather.fetchWeather(document.querySelector(".search-bar").value);
+    }
+}
