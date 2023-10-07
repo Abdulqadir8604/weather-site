@@ -8,6 +8,9 @@ body {
     margin: 0;
     background: rgb(60, 60, 68);
     background: url("https://images.unsplash.com/photo-1517436073-8b1b0b2b5b1f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     font-size: 120%;
     color: black;
     font-family: 'Open Sans', sans-serif;
@@ -15,9 +18,9 @@ body {
 }
 
 .card {
-    background: linear-gradient(45deg, rgba(87, 87, 87, 0.416), rgba(87, 87, 87, 0));
+    background: linear-gradient(45deg, rgba(165, 165, 165, 0.416), rgba(2, 2, 2, 0));
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(30px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0 , 0, 0, 0.37);
     color: rgb(255, 255, 255);
