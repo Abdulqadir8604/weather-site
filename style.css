@@ -11,7 +11,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    font-size: 120%;
+    font-size: 16px;
     color: black;
     font-family: 'Open Sans', sans-serif;
     user-select: none;
@@ -25,26 +25,27 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0 , 0, 0, 0.37);
     color: rgb(255, 255, 255);
     padding: 2em;
-    border-radius: 30px;
+    border-radius: 1.8rem;
     width: 100%;
-    max-width: 420px;
+    max-width: 26.25rem;
     margin: 1em;
-    font-size: 20px;
+    font-size: 1.25rem;
+    transition: 0.3s ease-in-out;
 }
 
 .search {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1em;
+    margin: 1rem;
 }
 
 button{
     margin: 0.5em;
     border-radius: 50%;
     border: none;
-    height: 44px;
-    width: 44px;
+    height: 3rem;
+    width: 3rem;
     outline: none;
     background-color: #7c7c7ca4;
     color: white;
@@ -57,24 +58,30 @@ button:hover{
 }
 
 .search-bar{
-    border-radius: 30px;
+    border-radius: 5rem;
     border: none;
     width: calc(100% - 100px);
     outline: none;
-    padding: 0.4em 1em;
+    padding: 0.4rem 1rem;
     background: #7c7c7c71;
     font-family: inherit;
     color: white;
     font-size: 100%;
+    text-transform: capitalize;
 }
 
 .search-bar::placeholder{
     color: white;
 }
 
+.card .city{
+    font-size: 1.5erm;
+    margin: 0;
+}
+
 h1.temp{
-    font-size: 3em;
-    margin: 0 0 0.4em;
+    font-size: 3rem;
+    margin: 0 0 0.4rem;
 }
 
 .flex{
@@ -84,14 +91,62 @@ h1.temp{
 
 .description{
     text-transform: capitalize;
-    margin-left: 10px;
+    margin-left: 5rem;
 }
 
 .copyright{
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 1em;
-    font-size: 0.5em;
+    margin: 1rem;
+    font-size: 0.5rem;
     color: white;
 }
+
+@media only screen and (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+    
+    .card {
+      font-size: 1rem;
+      max-width: 20rem;
+    }
+    
+    .search-bar {
+      width: calc(100% - 80px);
+    }
+
+    button {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    
+    .description {
+      margin-left: 2rem;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+    
+    .card {
+      font-size: 0.8rem;
+      max-width: 16rem;
+    }
+    
+    .search-bar {
+      width: calc(100% - 60px);
+    }
+
+    button {
+        height: 2rem;
+        width: 2rem;
+    }
+    
+    .description {
+      margin-left: 1rem;
+    }
+  }
