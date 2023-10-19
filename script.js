@@ -1,3 +1,20 @@
+const getTime = (lat, lon) => {
+    return fetch(
+      `https://api.api-ninjas.com/v1/worldtime?lat=${lat}&lon=${lon}`,
+      {
+        headers: {
+          'X-Api-Key': 'jt/+M9sWLnzvxioz1FbEoQ==zcVoxl9WMsXYLGF1',
+          'Content-Type': 'application/json'
+        }
+      }
+    )
+      .then(response => response.json())
+      .then((data) => {
+        let timeString = data.day_of_week + ", " + data.hour + ":" + data.minute;
+        return timeString;
+    });   
+}
+
 let weather = {
     "apiKey": "f820fd905393e40aec82ce97b6630c7f",
     fetchWeather: function (city) {
@@ -15,11 +32,15 @@ let weather = {
         const { icon, description } = data.weather[0];
         const { temp, humidity } = data.main;
         const { speed } = data.wind;
-        console.log(name, icon, description, temp, humidity, speed);
+        const { lon, lat } = data.coord;
+        getTime(lat, lon)
+            .then((timeString) => {
+                document.querySelector(".date").innerText = timeString;
+        });
         document.querySelector(".city").innerText = name;
-        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+        document.querySelector(".temp").innerText = Math.round(temp) + "°C";
+        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + "@4x.png";
         document.querySelector(".weather-type").innerText = description.toUpperCase();
-        document.querySelector(".temp").innerText = temp + "°C";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind speed: " + speed + " km/h";
         document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')";
